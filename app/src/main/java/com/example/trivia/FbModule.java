@@ -12,10 +12,11 @@ import com.google.firebase.database.ValueEventListener;
 
 public class FbModule {
 
-    private Context context;
+    private Context context, context2;
+
 
     public FbModule(Context context) {
-        this.context = context; // הפניה לMainActivity
+        this.context = context; // הפניה לMainActivity;
         FirebaseDatabase database=FirebaseDatabase.getInstance();
         DatabaseReference reference=database.getReference("color");
 
@@ -38,6 +39,9 @@ public class FbModule {
         );
 
     }
+
+
+
 
     public void writeBackgroundColorToFb(String color){
         FirebaseDatabase database=FirebaseDatabase.getInstance();

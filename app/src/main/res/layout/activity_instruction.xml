@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".InstructionActivity"
+    android:orientation="vertical"
+    android:background="#F14F86"
+    >
+
+    <TextView
+        android:layout_marginTop="100dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Click the Start Game button to start playing, you must choose the correct answer to the exercise that appears on the screen, if you choose correctly, you will receive points, if not, the question will move on to the next question. If you want to return to the home screen, click No Repeat Game"
+        android:textSize="30dp"
+        android:gravity="center"
+       ></TextView>
+
+
+
+</LinearLayout>

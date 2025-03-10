@@ -1,26 +1,40 @@
 package com.example.trivia;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
+import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class GameActivity extends AppCompatActivity implements View.OnClickListener {
     private Button btna1, btna2, btna3, btna4;
     private TextView tvQuestion;
     private TextView tvQuestionNumber, tvPoints, tvGameOver;
-    private Collection collection;
+    private Collection2 collection;
     private Question currentQuestion;
     private int points=0;
+    private LinearLayout ll;
+    private String backgroundColor="";
+    private String color="1";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
+        ll=findViewById(R.id.activity_game);
 
-        collection=new Collection();
+        Intent i=getIntent();
+        color=i.getStringExtra("color");
+        if(!"1".equals(color)&&color!=null)
+        {
+        setBackgroundColor(color);}
+
+        collection=new Collection2();
 
         tvQuestion=findViewById(R.id.tvQuestion);
         btna1=findViewById(R.id.btna1);
@@ -97,6 +111,34 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
         tvQuestionNumber.setText("Question number:"+1);
         tvGameOver.setVisibility(View.INVISIBLE);
         this.nextQuestion();
+
+    }
+
+
+
+
+    public void setBackgroundColor(String color){
+        switch (color){
+            case "Red":{
+                ll.setBackgroundColor(Color.RED);
+                break;
+            }
+            case "Blue":{
+                ll.setBackgroundColor(Color.BLUE);
+                break;
+            }
+            case "Pink":{
+                ll.setBackgroundColor(Color.argb(255,255,192,203));
+                break;
+            }
+            case "Yellow":{
+                ll.setBackgroundColor(Color.YELLOW);
+                break;
+            }
+            default:
+                ll.setBackgroundColor(Color.WHITE);
+
+        }
 
     }
 }

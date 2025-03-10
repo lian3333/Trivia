@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
     private FbModule fbModule;
     private String backgroundColor="";
     private ConstraintLayout ll;
+    private String color="1";
 
 
 
@@ -42,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
                             Intent data=o.getData();
                             String str=data.getStringExtra("color");
                             fbModule.writeBackgroundColorToFb(str);
+                            color=str;
 
 
 
@@ -54,6 +56,8 @@ public class MainActivity extends AppCompatActivity {
 
     }
     public void onInstruction(View view) {
+        Intent i=new Intent(this,InstructionActivity.class);
+        launcher.launch(i);
     }
 
     public void onSetting(View view) {
@@ -62,6 +66,7 @@ public class MainActivity extends AppCompatActivity {
     }
     public void onStartGame(View view) {
         Intent intent =new Intent(this, GameActivity.class);
+        intent.putExtra("color",backgroundColor);
         startActivity(intent);
     }
 
