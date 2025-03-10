@@ -1,6 +1,7 @@
 package com.example.trivia;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Collection2 {
     private ArrayList<Question> arr;
@@ -17,9 +18,13 @@ public class Collection2 {
         arr.add(q3);
         arr.add(q4);
 
+        Collections.shuffle(arr);
+
     }
     public void  initQuestion(){
         index=0;
+
+        Collections.shuffle(arr);
     }
      public Question getNextQuestion(){
         // הפעולה מחזירה הפניה לשאלה הבאה

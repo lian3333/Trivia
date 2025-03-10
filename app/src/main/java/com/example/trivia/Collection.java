@@ -15,19 +15,18 @@ public class Collection {
         Question q4=new Question("1+4","5","2","3","100",1);
 
         arr=new ArrayList<>();
-        //Random random=new Random();
-        //int x=random.nextInt(4)+1;
 
         arr.add(q1);
         arr.add(q2);
         arr.add(q3);
         arr.add(q4);
 
-        Collections.shuffle(arr);
+
 
     }
     public void  initQuestion(){
         index=0;
+
     }
      public Question getNextQuestion(){
         // הפעולה מחזירה הפניה לשאלה הבאה
